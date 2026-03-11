@@ -491,6 +491,76 @@
             color: var(--accent);
         }
 
+        /* Google Map */
+        .google-map-section {
+            background: var(--black);
+            padding: 6rem 0 0;
+        }
+        .map-header {
+            padding: 0 4rem 3rem;
+        }
+        .map-address {
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            color: var(--light-gray);
+            margin-top: 1.5rem;
+        }
+        .map-address span {
+            color: var(--accent);
+            margin-right: 0.5rem;
+        }
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 520px;
+        }
+        .map-container iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .map-pin-overlay {
+            position: absolute;
+            bottom: 3rem;
+            left: 4rem;
+            z-index: 10;
+        }
+        .pin-card {
+            background: rgba(10,10,10,0.92);
+            border: 1px solid rgba(201,169,110,0.4);
+            padding: 1.5rem 2rem;
+            backdrop-filter: blur(10px);
+        }
+        .pin-title {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+        .pin-addr {
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            color: var(--light-gray);
+            margin-bottom: 1rem;
+        }
+        .pin-link {
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        .pin-link:hover { color: var(--white); }
+
+        @media (max-width: 768px) {
+            .map-header { padding: 0 1.5rem 2rem; }
+            .map-container { height: 400px; }
+            .map-pin-overlay { left: 1.5rem; bottom: 1.5rem; }
+        }
+
         /* Booking / Contact */
         .booking {
             background: var(--charcoal);
@@ -855,6 +925,38 @@
                 <span class="location-tag">天母商圈</span>
                 <span class="location-tag">頂尖國際學校</span>
                 <span class="location-tag">台北市立醫院</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Map -->
+    <section class="google-map-section" id="map">
+        <div class="map-header" data-aos="fade-up">
+            <div class="section-eyebrow">Location Map</div>
+            <h2 class="section-title">建案基地</h2>
+            <p class="map-address">
+                <span>&#x2605;</span> 111 台北市士林區文林路 468 號
+            </p>
+        </div>
+        <div class="map-container">
+            <iframe
+                src="https://maps.google.com/maps?q=111台北市士林區文林路468號&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style="border:0; filter: grayscale(80%) contrast(1.1) invert(5%);"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="義華Nº1建案位置 - 台北市士林區文林路468號">
+            </iframe>
+            <div class="map-pin-overlay">
+                <div class="pin-card" data-aos="fade-up">
+                    <div class="pin-title">義華 Nº1</div>
+                    <div class="pin-addr">台北市士林區文林路 468 號</div>
+                    <a href="https://maps.google.com/?q=台北市士林區文林路468號" target="_blank" class="pin-link">
+                        在 Google 地圖開啟 →
+                    </a>
+                </div>
             </div>
         </div>
     </section>
